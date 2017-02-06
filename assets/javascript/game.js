@@ -29,7 +29,8 @@ var pres = {
 
 
 
-$(".leftScreenContainer #pres").click(function(){
+$(".leftScreenContainer #pres").on("click", function(){
+
 	$(".leftScreenContainer #darkHelmet").clone(true).appendTo(".rightScreenContainer");
 	$(".leftScreenContainer #darkHelmet").hide();
 	$(".leftScreenContainer #barf").clone(true).appendTo(".rightScreenContainer");
@@ -40,8 +41,9 @@ $(".leftScreenContainer #pres").click(function(){
 
 });
 
-$(".rightScreenContainer #darkHelmet").click(function(){
-	$(".middleScreenContainer #darkHelmet").hide();
+$(".rightScreenContainer").on("click","#darkHelmet", function(){
+	$(".rightScreenContainer #darkHelmet").clone(true).appendTo(".middleScreenContainer");
+	$(".rightScreenContainer #darkHelmet").hide();
 
 });
 
