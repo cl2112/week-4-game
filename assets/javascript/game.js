@@ -25,12 +25,29 @@ var pres = {
 	health: 0,
 }
 
-$("#pres").click(function(){
-	$("#darkHelmet").remove();
-	$("#barf").hide();
-	$("#loneStar").hide();
+
+
+
+
+$(".leftScreenContainer #pres").click(function(){
+	$(".leftScreenContainer #darkHelmet").clone(true).appendTo(".rightScreenContainer");
+	$(".leftScreenContainer #darkHelmet").hide();
+	$(".leftScreenContainer #barf").clone(true).appendTo(".rightScreenContainer");
+	$(".leftScreenContainer #barf").hide();
+	$(".leftScreenContainer #loneStar").clone(true).appendTo(".rightScreenContainer");
+	$(".leftScreenContainer #loneStar").hide();
+
 
 });
+
+$(".rightScreenContainer #darkHelmet").click(function(){
+	$(".middleScreenContainer #darkHelmet").hide();
+
+});
+
+
+
+
 
 
 
