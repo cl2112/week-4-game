@@ -25,11 +25,11 @@ var pres = {
 	health: 0,
 }
 
+var charaChosen
 
 
 
-
-$(".leftScreenContainer #pres").on("click", function(){
+/*$(".leftScreenContainer #pres").on("click", function(){
 
 	$(".leftScreenContainer #darkHelmet").clone(true).appendTo(".rightScreenContainer");
 	$(".leftScreenContainer #darkHelmet").hide();
@@ -45,6 +45,14 @@ $(".rightScreenContainer").on("click","#darkHelmet", function(){
 	$(".rightScreenContainer #darkHelmet").clone(true).appendTo(".middleScreenContainer");
 	$(".rightScreenContainer #darkHelmet").hide();
 
+});
+
+*/
+
+$(".leftScreenContainer [id]").on("click", function(){
+	var charaChosen = $(this);
+	console.log(charaChosen);
+	
 });
 
 
