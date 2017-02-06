@@ -50,9 +50,9 @@ $(".rightScreenContainer").on("click","#darkHelmet", function(){
 */
 
 $(".leftScreenContainer [id]").on("click", function(){
-	var charaChosen = $(this);
+	var charaChosen = $(this).attr("id");
 	console.log(charaChosen);
-	
+
 });
 
 
