@@ -1,31 +1,36 @@
 $(document).ready(function(){
 
 
-var loneStar {
+var loneStar = {
 	atkPwr: 0,
 	counterAtk: 0,
 	health: 0,
 }
 
-var barf {
+var barf = {
 	atkPwr: 0,
 	counterAtk: 0,
 	health: 0,
 }
 
-var darkHelmet {
+var darkHelmet = {
 	atkPwr: 0,
 	counterAtk: 0,
 	health: 0,
 }
 
-var president {
+var pres = {
 	atkPwr: 0,
 	counterAtk: 0,
 	health: 0,
 }
 
+$("#pres").click(function(){
+	$("#darkHelmet").remove();
+	$("#barf").hide();
+	$("#loneStar").hide();
 
+});
 
 
 
