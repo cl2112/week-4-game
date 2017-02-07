@@ -25,11 +25,11 @@ var pres = {
 	health: 0,
 }
 
-var charaChosen
+var charaChosenId
 
 
 
-/*$(".leftScreenContainer #pres").on("click", function(){
+/*(".leftScreenContainer #pres").on("click", function(){
 
 	$(".leftScreenContainer #darkHelmet").clone(true).appendTo(".rightScreenContainer");
 	$(".leftScreenContainer #darkHelmet").hide();
@@ -46,12 +46,32 @@ $(".rightScreenContainer").on("click","#darkHelmet", function(){
 	$(".rightScreenContainer #darkHelmet").hide();
 
 });
-
 */
 
+//Game-State Variables ------------
+var gameStart
+var gameYourChara
+var gamePickNme
+var gameFight
+var gameOver
+
+
+
+
+
+if (gameStart = 1) {
+	
+}
+
+
 $(".leftScreenContainer [id]").on("click", function(){
-	var charaChosen = $(this).attr("id");
-	console.log(charaChosen);
+	charaChosenId = $(this).attr("id");
+	console.log(charaChosenId);
+	$(".leftScreenContainer [id]").not(this).each(function(){
+		$(this).clone().appendTo(".rightScreenContainer");
+		$(this).hide();
+	});
+		
 
 });
 
