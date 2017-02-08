@@ -57,8 +57,26 @@ var gameOver
 
 
 
-
 $(".leftScreenContainer [id]").on("click", function(){
+	if (gameYourChara == 1){
+		gameYourChara = 0;
+		gamePickNme = 1;
+		$(".leftScreenContainer [id]").not(this).appendTo(".rightScreenContainer");
+	}
+});
+
+$(".rightScreenContainer").on("click","[id]", function(){
+	if (gamePickNme == 1){
+		gamePickNme = 0;
+		$(this).appendTo(".middleScreenContainer");
+	}	
+});
+
+
+
+
+
+/*$(".leftScreenContainer [id]").on("click", function(){
 	if (gameYourChara == 1){
 		charaChosenId = $(this).attr("id");
 		console.log(charaChosenId);
@@ -70,7 +88,7 @@ $(".leftScreenContainer [id]").on("click", function(){
 		console.log(gamePickNme);
 	}
 });
-
+*/
 /*
 $(".leftScreenContainer [id]").on("click", function(){
 	if (gameYourChara == 1){
