@@ -1,28 +1,28 @@
 $(document).ready(function(){
 
 
-var loneStarStats = {
+var loneStar = {
 	atkPwr: 0,
 	counterAtk: 0,
-	health: 0,
+	health: 100,
 }
 
-var barfStats = {
+var barf = {
 	atkPwr: 0,
 	counterAtk: 0,
-	health: 0,
+	health: 120,
 }
 
-var darkHelmetStats = {
+var darkHelmet = {
 	atkPwr: 0,
 	counterAtk: 0,
-	health: 0,
+	health: 160,
 }
 
-var presStats = {
+var pres = {
 	atkPwr: 0,
 	counterAtk: 0,
-	health: 0,
+	health: 200,
 }
 
 var charaChosenId
@@ -55,6 +55,11 @@ var gamePickNme
 var gameFight
 var gameOver
 
+$(".healthLoneStar").text(loneStar.health);
+$(".healthBarf").text(barf.health);
+$(".healthDarkHelmet").text(darkHelmet.health);
+$(".healthPres").text(pres.health);
+
 
 
 $(".leftScreenContainer [id]").on("click", function(){
@@ -68,8 +73,15 @@ $(".leftScreenContainer [id]").on("click", function(){
 $(".rightScreenContainer").on("click","[id]", function(){
 	if (gamePickNme == 1){
 		gamePickNme = 0;
+		gameFight = 1;
+		$(".leftScreenContainer [id]").appendTo(".middleScreenContainer");
+		$(".middleScreenContainer").append("<h1 class='colHeading text-center clickToFight'>-Click To Fight!-</h1>");
 		$(this).appendTo(".middleScreenContainer");
 	}	
+});
+
+$(".middleScreenContainer").on("click", ".clickToFight", function(){
+	
 });
 
 
