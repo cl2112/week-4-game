@@ -2,26 +2,26 @@ $(document).ready(function(){
 
 
 var loneStar = {
-	atkPwr: 0,
-	counterAtk: 0,
+	atkPwr: 10,
+	counterAtk: 10,
 	health: 100,
 }
 
 var barf = {
-	atkPwr: 0,
-	counterAtk: 0,
+	atkPwr: 10,
+	counterAtk: 10,
 	health: 120,
 }
 
 var darkHelmet = {
-	atkPwr: 0,
-	counterAtk: 0,
+	atkPwr: 10,
+	counterAtk: 10,
 	health: 160,
 }
 
 var pres = {
-	atkPwr: 0,
-	counterAtk: 0,
+	atkPwr: 10,
+	counterAtk: 10,
 	health: 200,
 }
 
@@ -55,10 +55,10 @@ var gamePickNme
 var gameFight
 var gameOver
 
-$(".healthLoneStar").text(loneStar.health);
-$(".healthBarf").text(barf.health);
-$(".healthDarkHelmet").text(darkHelmet.health);
-$(".healthPres").text(pres.health);
+$(".healthloneStar").text(loneStar.health);
+$(".healthbarf").text(barf.health);
+$(".healthdarkHelmet").text(darkHelmet.health);
+$(".healthpres").text(pres.health);
 
 
 
@@ -81,7 +81,19 @@ $(".rightScreenContainer").on("click","[id]", function(){
 });
 
 $(".middleScreenContainer").on("click", ".clickToFight", function(){
-	
+	var yourChara = $(".middleScreenContainer [id]").first().attr("id");
+	var enemyChara = $(".middleScreenContainer [id]").last().attr("id");
+	console.log(yourChara);
+	console.log(enemyChara);
+	enemyChara.health -= yourChara.atkPwr;
+	yourChara.atkPwr += 10;
+	yourChara.health -= enemyChara.counterAtk;
+	$(".health" + yourChara).text(yourChara.health);
+	console.log(yourChara.health);
+	console.log(loneStar.health);
+	$(".health" + enemyChara).text(enemyChara.health);
+	console.log(enemyChara.health);
+	console.log(barf.health);
 });
 
 
