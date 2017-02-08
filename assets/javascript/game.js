@@ -28,32 +28,13 @@ var pres = {
 var charaChosenId
 var enemyChosenId
 
-
-
-/*(".leftScreenContainer #pres").on("click", function(){
-
-	$(".leftScreenContainer #darkHelmet").clone(true).appendTo(".rightScreenContainer");
-	$(".leftScreenContainer #darkHelmet").hide();
-	$(".leftScreenContainer #barf").clone(true).appendTo(".rightScreenContainer");
-	$(".leftScreenContainer #barf").hide();
-	$(".leftScreenContainer #loneStar").clone(true).appendTo(".rightScreenContainer");
-	$(".leftScreenContainer #loneStar").hide();
-
-
-});
-
-$(".rightScreenContainer").on("click","#darkHelmet", function(){
-	$(".rightScreenContainer #darkHelmet").clone(true).appendTo(".middleScreenContainer");
-	$(".rightScreenContainer #darkHelmet").hide();
-
-});
-*/
-
 //Game-State Variables ------------
 var gameYourChara = 1
 var gamePickNme
 var gameFight
 var gameOver
+
+
 
 $(".healthloneStar").text(loneStar.health);
 $(".healthbarf").text(barf.health);
@@ -84,6 +65,7 @@ $(".middleScreenContainer").on("click", ".clickToFight", function(){
 	var yourChara = $(".middleScreenContainer [id]").first().attr("id");
 	var enemyChara = $(".middleScreenContainer [id]").last().attr("id");
 	console.log(yourChara);
+	console.log(loneStar);
 	console.log(enemyChara);
 	enemyChara.health -= yourChara.atkPwr;
 	yourChara.atkPwr += 10;
@@ -161,7 +143,24 @@ $(".leftScreenContainer [id]").on("click", function(){
 
 });*/
 
+/*(".leftScreenContainer #pres").on("click", function(){
 
+	$(".leftScreenContainer #darkHelmet").clone(true).appendTo(".rightScreenContainer");
+	$(".leftScreenContainer #darkHelmet").hide();
+	$(".leftScreenContainer #barf").clone(true).appendTo(".rightScreenContainer");
+	$(".leftScreenContainer #barf").hide();
+	$(".leftScreenContainer #loneStar").clone(true).appendTo(".rightScreenContainer");
+	$(".leftScreenContainer #loneStar").hide();
+
+
+});
+
+$(".rightScreenContainer").on("click","#darkHelmet", function(){
+	$(".rightScreenContainer #darkHelmet").clone(true).appendTo(".middleScreenContainer");
+	$(".rightScreenContainer #darkHelmet").hide();
+
+});
+*/
 
 
 
