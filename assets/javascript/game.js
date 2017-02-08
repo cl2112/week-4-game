@@ -64,6 +64,7 @@ $(".rightScreenContainer").on("click","[id]", function(){
 $(".middleScreenContainer").on("click", ".clickToFight", function(){
 	var yourChara = $(".middleScreenContainer [id]").first().attr("id");
 	var enemyChara = $(".middleScreenContainer [id]").last().attr("id");
+	var yourCharaObj = "yourChara"
 	console.log(yourChara);
 	console.log(loneStar);
 	console.log(enemyChara);
