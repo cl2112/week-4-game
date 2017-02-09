@@ -38,13 +38,15 @@ var gameYourChara = 1
 var gamePickNme
 var gameFight
 var gameOver
+updateHealth();
 
+function updateHealth(){
+	$(".healthloneStar").text(characters.loneStar.health);
+	$(".healthbarf").text(characters.barf.health);
+	$(".healthdarkHelmet").text(characters.darkHelmet.health);
+	$(".healthpres").text(characters.pres.health);
+};
 
-
-$(".healthloneStar").text(characters.loneStar.health);
-$(".healthbarf").text(characters.barf.health);
-$(".healthdarkHelmet").text(characters.darkHelmet.health);
-$(".healthpres").text(characters.pres.health);
 
 
 
@@ -73,12 +75,31 @@ $(".middleScreenContainer").on("click", ".clickToFight", function(){
 	var enemyChara = characters[$(".middleScreenContainer [id]").last().attr("id")];
 	console.log(yourChara);
 	console.log(enemyChara);
+	battle(yourChara, enemyChara);
+	updateHealth();
+
+	
+
 
 
 });
 
-function battle(your, enemy){
-	
+function battle(you, enemy){
+	enemy.health -= you.atkPwr;
+	you.atkPwr += you.atkIncrement;
+	if (enemy.health <= 0) {
+		console.log("Enemy Dead");
+		$(".middleScreenContainer [id]").first().appendTo(".leftScreenContainer");
+		$(".middleScreenContainer [id]").last().remove();
+		$(".middleScreenContainer .clickToFight").remove();
+		gamePickNme = 1;
+	} else {
+		you.health -= enemy.atkPwr;
+		if (you.health <= 0){
+			console.log("You Dead")
+		}
+	}
+
 }
 
 
