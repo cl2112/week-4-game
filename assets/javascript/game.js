@@ -61,7 +61,7 @@ $(".rightScreenContainer").on("click","[id]", function(){
 	}	
 });
 
-/*$(".middleScreenContainer").on("click", ".clickToFight", function(){
+$(".middleScreenContainer").on("click", ".clickToFight", function(){
 	var yourChara = $(".middleScreenContainer [id]").first().attr("id");
 	if (yourChara == "loneStar") {
 		yourChara = loneStar;
@@ -88,21 +88,25 @@ $(".rightScreenContainer").on("click","[id]", function(){
 	enemyChara.health -= yourChara.atkPwr;
 	yourChara.atkPwr += 10;
 	yourChara.health -= enemyChara.counterAtk;
-	$(".health" + yourChara).text(yourChara.health);
+	$(".health" + yourChara.string).text(yourChara.health);
 	console.log(yourChara.health);
 	console.log(loneStar.health);
 	$(".health" + enemyChara).text(enemyChara.health);
 	console.log(enemyChara.health);
 	console.log(barf.health);
 });
-*/
 
 
+$(".middleScreenContainer").on("click", ".clickToFight", function(){
+	var yourChara = $(".middleScreenContainer [id]").first().attr("id");
+
+})
 
 var func = function() {
     var something = { key : "peaches"};
     
     function someOtherFunction() {
+
         return "key";
     }
     
@@ -111,7 +115,11 @@ var func = function() {
 
 
 
+function matchObj(string){
+	if (string == ""){
 
+	}
+}
 
 
 
