@@ -61,10 +61,27 @@ $(".rightScreenContainer").on("click","[id]", function(){
 	}	
 });
 
-$(".middleScreenContainer").on("click", ".clickToFight", function(){
+/*$(".middleScreenContainer").on("click", ".clickToFight", function(){
 	var yourChara = $(".middleScreenContainer [id]").first().attr("id");
+	if (yourChara == "loneStar") {
+		yourChara = loneStar;
+	} else if (yourChara == "barf") {
+		yourChara = barf;
+	} else if (yourChara == "darkHelmet") {
+		yourChara = darkHelmet;
+	} else {
+		yourChara = pres;
+	}
 	var enemyChara = $(".middleScreenContainer [id]").last().attr("id");
-	var yourCharaObj = "yourChara"
+	if (enemyChara == "loneStar") {
+		enemyChara = loneStar;
+	} else if (enemyChara == "barf") {
+		enemyChara = barf;
+	} else if (enemyChara == "darkHelmet") {
+		enemyChara = darkHelmet;
+	} else {
+		enemyChara = pres;
+	}
 	console.log(yourChara);
 	console.log(loneStar);
 	console.log(enemyChara);
@@ -78,6 +95,22 @@ $(".middleScreenContainer").on("click", ".clickToFight", function(){
 	console.log(enemyChara.health);
 	console.log(barf.health);
 });
+*/
+
+
+
+var func = function() {
+    var something = { key : "peaches"};
+    
+    function someOtherFunction() {
+        return "key";
+    }
+    
+    console.log(something[someOtherFunction()]);
+}
+
+
+
 
 
 
