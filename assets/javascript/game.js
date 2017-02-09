@@ -32,13 +32,22 @@ var characters = {
 
 var charaChosenId
 var enemyChosenId
+var numberOfCharacters = Object.keys(characters).length;
 
 //Game-State Variables ------------
 var gameYourChara = 1
 var gamePickNme
 var gameFight
 var gameOver
+
 updateHealth();
+
+
+
+function totalCharacters(){
+
+}
+
 
 function updateHealth(){
 	$(".healthloneStar").text(characters.loneStar.health);
@@ -61,7 +70,6 @@ $(".leftScreenContainer [id]").on("click", function(){
 $(".rightScreenContainer").on("click","[id]", function(){
 	if (gamePickNme == 1){
 		gamePickNme = 0;
-		gameFight = 1;
 		$(".leftScreenContainer [id]").appendTo(".middleScreenContainer");
 		$(".middleScreenContainer").append("<h1 class='colHeading text-center clickToFight'>-Click To Fight!-</h1>");
 		$(this).appendTo(".middleScreenContainer");
