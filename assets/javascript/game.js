@@ -1,29 +1,34 @@
 $(document).ready(function(){
 
 
-var loneStar = {
-	atkPwr: 10,
-	counterAtk: 10,
-	health: 100,
+var characters = {
+	loneStar: {
+		atkPwr: 10,
+		counterAtk: 10,
+		health: 100,
+		atkIncrement: 10,
+	},
+	barf: {
+		atkPwr: 10,
+		counterAtk: 10,
+		health: 120,
+		atkIncrement: 10,
+	},
+	darkHelmet: {
+		atkPwr: 10,
+		counterAtk: 10,
+		health: 160,
+		atkIncrement: 10,
+	},
+	pres: {
+		atkPwr: 10,
+		counterAtk: 10,
+		health: 200,
+		atkIncrement: 10,
+	},
 }
 
-var barf = {
-	atkPwr: 10,
-	counterAtk: 10,
-	health: 120,
-}
 
-var darkHelmet = {
-	atkPwr: 10,
-	counterAtk: 10,
-	health: 160,
-}
-
-var pres = {
-	atkPwr: 10,
-	counterAtk: 10,
-	health: 200,
-}
 
 var charaChosenId
 var enemyChosenId
@@ -36,10 +41,10 @@ var gameOver
 
 
 
-$(".healthloneStar").text(loneStar.health);
-$(".healthbarf").text(barf.health);
-$(".healthdarkHelmet").text(darkHelmet.health);
-$(".healthpres").text(pres.health);
+$(".healthloneStar").text(characters.loneStar.health);
+$(".healthbarf").text(characters.barf.health);
+$(".healthdarkHelmet").text(characters.darkHelmet.health);
+$(".healthpres").text(characters.pres.health);
 
 
 
@@ -61,6 +66,34 @@ $(".rightScreenContainer").on("click","[id]", function(){
 	}	
 });
 
+
+
+$(".middleScreenContainer").on("click", ".clickToFight", function(){
+	var yourChara = characters[$(".middleScreenContainer [id]").first().attr("id")];
+	var enemyChara = characters[$(".middleScreenContainer [id]").last().attr("id")];
+	console.log(yourChara);
+	console.log(enemyChara);
+
+
+});
+
+function battle(your, enemy){
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 $(".middleScreenContainer").on("click", ".clickToFight", function(){
 	var yourChara = $(".middleScreenContainer [id]").first().attr("id");
 	if (yourChara == "loneStar") {
@@ -122,7 +155,7 @@ function matchObj(string){
 }
 
 
-
+*/
 
 /*$(".leftScreenContainer [id]").on("click", function(){
 	if (gameYourChara == 1){
