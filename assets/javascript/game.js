@@ -84,7 +84,9 @@ $(".middleScreenContainer").on("click", ".clickToFight", function(){
 	updateHealth();
 
 	
-
+$(".leftScreenContainer").on("click", ".playAgain", function(){
+	location.reload(true);
+})
 
 
 });
@@ -102,6 +104,7 @@ function battle(you, enemy){
 		wins++;
 		if (wins == numberOfCharacters - 1){
 			$(".leftScreenContainer .colHeading").text("-All Enemies Defeated!-");
+			$(".leftScreenContainer").append("<h1 class='colHeading text-center playAgain'>-Congrats!- <br> -Click Here To Play Again-</h1>");
 		}
 	} else {
 		you.health -= enemy.atkPwr;
