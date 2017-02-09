@@ -6,23 +6,23 @@ var characters = {
 		atkPwr: 10,
 		counterAtk: 10,
 		health: 100,
-		atkIncrement: 10,
+		atkIncrement: 18,
 	},
 	barf: {
 		atkPwr: 10,
-		counterAtk: 10,
+		counterAtk: 15,
 		health: 120,
-		atkIncrement: 10,
+		atkIncrement: 13,
 	},
 	darkHelmet: {
 		atkPwr: 10,
-		counterAtk: 10,
+		counterAtk: 20,
 		health: 160,
 		atkIncrement: 10,
 	},
 	pres: {
 		atkPwr: 10,
-		counterAtk: 10,
+		counterAtk: 25,
 		health: 200,
 		atkIncrement: 10,
 	},
@@ -107,9 +107,13 @@ function battle(you, enemy){
 			$(".leftScreenContainer").append("<h1 class='colHeading text-center playAgain'>-Congrats!- <br> -Click Here To Play Again-</h1>");
 		}
 	} else {
-		you.health -= enemy.atkPwr;
+		you.health -= enemy.counterAtk;
 		if (you.health <= 0){
-			console.log("You Dead")
+			console.log("You Dead");
+			$(".middleScreenContainer .clickToFight").remove();
+			$(".middleScreenContainer [id]").first().remove();
+			$(".leftScreenContainer .colHeading").text("-You Were Defeated!-");
+			$(".leftScreenContainer").append("<h1 class='colHeading text-center playAgain'>-Not Like This!- <br> -Click Here To Play Again-</h1>");
 		}
 	}
 
