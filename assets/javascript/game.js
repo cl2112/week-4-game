@@ -30,8 +30,7 @@ var characters = {
 
 
 
-var charaChosenId
-var enemyChosenId
+var wins = 0
 var numberOfCharacters = Object.keys(characters).length;
 
 //Game-State Variables ------------
@@ -43,10 +42,6 @@ var gameOver
 updateHealth();
 
 
-
-function totalCharacters(){
-
-}
 
 
 function updateHealth(){
@@ -63,6 +58,7 @@ $(".leftScreenContainer [id]").on("click", function(){
 	if (gameYourChara == 1){
 		gameYourChara = 0;
 		gamePickNme = 1;
+		$(".leftScreenContainer .colHeading").text("-Now, Pick Your Enemy-");
 		$(".leftScreenContainer [id]").not(this).appendTo(".rightScreenContainer");
 	}
 });
@@ -73,6 +69,7 @@ $(".rightScreenContainer").on("click","[id]", function(){
 		$(".leftScreenContainer [id]").appendTo(".middleScreenContainer");
 		$(".middleScreenContainer").append("<h1 class='colHeading text-center clickToFight'>-Click To Fight!-</h1>");
 		$(this).appendTo(".middleScreenContainer");
+		$(".leftScreenContainer .colHeading").text("-Battle!-");
 	}	
 });
 
@@ -100,7 +97,12 @@ function battle(you, enemy){
 		$(".middleScreenContainer [id]").first().appendTo(".leftScreenContainer");
 		$(".middleScreenContainer [id]").last().remove();
 		$(".middleScreenContainer .clickToFight").remove();
+		$(".leftScreenContainer .colHeading").text("-Now, Pick Your Next Enemy-");
 		gamePickNme = 1;
+		wins++;
+		if (wins == numberOfCharacters - 1){
+			$(".leftScreenContainer .colHeading").text("-All Enemies Defeated!-");
+		}
 	} else {
 		you.health -= enemy.atkPwr;
 		if (you.health <= 0){
