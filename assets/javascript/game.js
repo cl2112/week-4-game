@@ -9,22 +9,22 @@ var characters = {
 		atkIncrement: 18,
 	},
 	barf: {
-		atkPwr: 10,
+		atkPwr: 4,
 		counterAtk: 15,
 		health: 120,
 		atkIncrement: 13,
 	},
 	darkHelmet: {
-		atkPwr: 10,
-		counterAtk: 20,
+		atkPwr: 4,
+		counterAtk: 23,
 		health: 160,
-		atkIncrement: 10,
+		atkIncrement: 6,
 	},
 	pres: {
-		atkPwr: 10,
+		atkPwr: 5,
 		counterAtk: 25,
 		health: 200,
-		atkIncrement: 10,
+		atkIncrement: 3,
 	},
 }
 
